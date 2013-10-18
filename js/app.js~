@@ -1,0 +1,153 @@
+var color  = "white";
+var boton  = 0;
+var evento = 0;
+var paleta = 0;
+var modo   = 0;
+
+$(document).ready(function() {
+	$('.click').css('color', color);
+	$('.icon').css('background-color', color);
+});
+
+function interruptor (tipo) {
+
+	if (modo == 1 && boton == 0) {
+
+		var rango_superior  = 8;
+		var rango_inferior  = 1;
+		var color_aleatorio = Math.floor(Math.random()*(rango_superior-(rango_inferior-1))) + rango_inferior;
+		cambiar_color(color_aleatorio, 1);
+
+	}
+
+	$('.click').css('color', color);
+	$('.icon').css('background-color', color);
+
+	if (boton == 0) {
+
+		$("body").css("background-color", color);
+		$(".click").css("color", color);
+		$('#boton_power').attr('src','img/power_icon_on.png');
+		$('#boton_flash').attr('src','img/flash_icon_on.png');
+		boton = 1;
+
+	} else {
+	
+		$("body").css("background-color", "#000000");
+		$(".click").css("color", "#000000");
+		$('#boton_power').attr('src','img/power_icon_off.png');
+		$('#boton_flash').attr('src','img/flash_icon_off.png');
+		boton = 0;
+
+	}
+
+	if (tipo != 1) {
+	
+		if (evento == 1) {
+
+			setTimeout(function() {
+				interruptor(2);
+			},500);
+	
+		}
+	
+	}
+
+}
+
+function activar() {
+	
+	if (evento == 0) {
+		
+		evento = 1;
+		
+	} else {
+		
+		evento = 0;
+		
+	}
+	
+	interruptor(2);
+
+}
+
+function mostrar_paleta() {
+
+	if (paleta == 0) {
+
+		$('#contenedor_colores').css('display', 'block');
+		paleta = 1;
+
+	} else {
+
+		$('#contenedor_colores').css('display', 'none');
+		paleta = 0;
+
+	}
+}
+
+function cambiar_color(tipo_color, tipo_modo) {
+
+	var img_check = '<img class="imagen_color" src="img/check.png" height="80" width="80" />';
+	var img_empty = '<img class="imagen_color" src="img/empty.png" height="80" width="80" />';
+
+	paleta = 0;
+	modo   = tipo_modo;
+	$('#contenedor_colores').css('display', 'none');	
+	$('.colores_link').html('');
+	$('.colores_link').html(img_empty);
+
+	if (tipo_color == 1) {
+
+		color = 'white';
+		$('#white_link').html('');
+		$('#white_link').html(img_check);
+
+	} else if (tipo_color == 2) {
+
+		color = 'yellow';
+		$('#yellow_link').html('');
+		$('#yellow_link').html(img_check);
+
+	} else if (tipo_color == 3) {
+
+		color = 'blue';
+		$('#blue_link').html('');
+		$('#blue_link').html(img_check);
+
+	} else if (tipo_color == 4) {
+
+		color = 'red';
+		$('#red_link').html('');
+		$('#red_link').html(img_check);
+
+	} else if (tipo_color == 5) {
+
+		color = 'green';
+		$('#green_link').html('');
+		$('#green_link').html(img_check);
+
+	} else if (tipo_color == 6) {
+
+		color = 'purple';
+		$('#purple_link').html('');
+		$('#purple_link').html(img_check);
+
+	} else if (tipo_color == 7) {
+
+		color = 'pink';
+		$('#pink_link').html('');
+		$('#pink_link').html(img_check);
+
+	} else if (tipo_color == 8) {
+
+		color = 'brown';
+		$('#brown_link').html('');
+		$('#brown_link').html(img_check);
+
+	} else if (tipo_color == 9) {
+
+		color = '';
+
+	}
+}

@@ -1,0 +1,80 @@
+body {
+	background-color: #000000;
+}
+
+.colores {
+	border : 2px solid black;
+	float  : left;
+	width  : 79px;
+	height : 79px;
+}
+
+#contenedor_boton_power {
+	left        : 20%;
+	margin-left : -32px;
+	margin-top  : -32px;
+	position    : absolute;
+	bottom      : 10%;
+} 
+
+#contenedor_boton_color {
+	left	    : 50%;
+	margin-left : -32px;
+	margin-top  : -32px;
+	position    : absolute;
+	bottom      : 10%;
+}
+
+
+#contenedor_boton_flash {
+	right       : 12%;
+	margin-left : -32px;
+	margin-top  : -32px;
+	position    : absolute;
+	bottom      : 10%;
+} 
+
+#contenedor_colores {
+	display		 : none;
+	background-color : white;
+	width            : 249px;
+	height           : 249px;
+	position         : absolute;
+	left             : 50%;
+	top              : 50%;
+	margin           : -174px 0 0 -124px;
+}
+
+#white {
+	background-color: white;
+}
+
+
+#yellow {
+	background-color: yellow;
+}
+
+
+#blue {
+	background-color: blue;
+}
+
+#red {
+	background-color: red;
+}
+
+#green {
+	background-color: green;
+}
+
+#purple {
+	background-color: purple;
+}
+
+#pink {
+	background-color: pink;
+}
+
+#brown {
+	background-color: brown;
+}
